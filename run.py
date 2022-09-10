@@ -2,6 +2,7 @@ import random
 from string import ascii_letters
 from words import words
 from hangman_game import HangmanGame
+from rules import greeting, rules
 
 BANNER = """
 .............................
@@ -55,14 +56,31 @@ def main():
     """
     this is the main function of the program
     """
-    while True:
-        random_word = get_random_word()
-        hangman_game = HangmanGame(random_word)
-        hangman_game.run_game()
+    name = input('Hello! Please type your name here: ')
+    print(f'\nWelcome {name}!')
+    print(greeting)
+    see_rules = input('Would you like to see the Game Rules and Instructions \
+before playing? (Y/N): ')
+    play = ''
 
-        option = get_option()
-        if option in ['N', 'NO']:
-            break
+    if check_option(see_rules) and see_rules.upper() in ['N', 'NO']:
+        play = 'Y'
+
+    elif check_option(see_rules) and see_rules.upper() in ['Y', 'YES']:
+        print(rules)
+        play = input(f'{name}, are you ready to play? (Y/N)')
+
+    if check_option(play) and play.upper() in ['Y', 'YES']:
+        while True:
+            random_word = get_random_word()
+            hangman_game = HangmanGame(random_word)
+            hangman_game.run_game()
+
+            option = get_option()
+            if option in ['N', 'NO']:
+                break
+    else:
+        print('Quitting the game...')
 
 
 main()

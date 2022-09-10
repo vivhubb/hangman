@@ -1,4 +1,6 @@
 from string import ascii_letters
+import platform
+import os
 from hangman_stages import hang, hbody
 
 BANNER = """
@@ -104,7 +106,7 @@ Please try another.')
         """
         this function prints the game board
         """
-
+        self.clear_screen()
         lives = self.error_limit - self.error_count
 
         print(BANNER)
@@ -114,3 +116,22 @@ Please try another.')
         if lives > 0 and not self.winner:
             print(f"You have {lives} " +
                   ("lives" if lives > 1 else "life") + " left.")
+
+    def clear_screen(self):
+        """
+        this function clears the screen
+        """
+        if is_windows():
+            os.system('cls')    # system call, clears screen
+        else:
+            os.system('clear')  # system call, clears screen
+
+
+def is_windows():
+    """
+    this function checks system platform
+    """
+    system_name = platform.system().lower()
+    if system_name == 'windows':
+        return True
+    return False
