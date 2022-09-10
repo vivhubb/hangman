@@ -22,6 +22,8 @@ class HangmanGame:
         self.hbody = hbody
         self.build_word = []
         self.used_letters = []
+        self.error_limit = 11
+        self.error_count = 0
 
         for _ in range(len(self.random_word)):
             self.build_word.append('-')
@@ -45,8 +47,8 @@ Please try another.')
 
     def check_user_input(self, guess):
         """
-        this function checks if the user input is in randoom_word
-        builds the build_word list if user input is in randoom_word
+        this function checks if the user input is in random_word
+        builds the build_word list if user input is in random_word
         """
         if guess in self.random_word:
             for index, value in enumerate(self.random_word):
@@ -59,11 +61,11 @@ Please try another.')
         """
         this function runs the game
         """
-        while True:
+        while self.error_count != self.error_limit:
             self.print_board()
             guess = self.get_user_input()
             if not self.check_user_input(guess):
-                print('error + 1')
+                self.error_count += 1
                 print('build the hangman')
             if ''.join(self.build_word) == self.random_word:
                 self.print_board()
@@ -73,7 +75,9 @@ Please try another.')
         """
         this function prints the game board
         """
+        lives = self.error_limit - self.error_count
         print(BANNER)
         print('\n'.join(self.hang))
         print(' '.join(self.build_word))
-        print('\nLetters used: ' + ', '.join(self.used_letters))
+        print('\nLetters used: ' + ', '.join(self.used_letters) + "\n")
+        print(f"You have {lives} "+("lives" if lives > 1 else "life")+" left.")
