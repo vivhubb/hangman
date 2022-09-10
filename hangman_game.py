@@ -1,5 +1,5 @@
-from hangman_stages import hang, hbody
 from string import ascii_letters
+from hangman_stages import hang, hbody
 
 BANNER = """
 .............................
@@ -14,7 +14,15 @@ BANNER = """
 
 class HangmanGame:
     """
-    pass
+    class Attributes:
+        random_word -> stores random word choice from words list
+        hang -> stores gibbet based on errors
+        hbody -> stores hangman body by stages
+        build_word -> initially stores the letters from random_word as '-'
+        used_letters -> stores letters guessed by user
+        error_limit -> defines error limit
+        error_count -> counts the mistakes made by user
+        winner -> stores if there is a winner at the end of the game
     """
     def __init__(self, random_word):
         self.random_word = random_word
@@ -24,6 +32,7 @@ class HangmanGame:
         self.used_letters = []
         self.error_limit = 11
         self.error_count = 0
+        self.winner = False
 
         for _ in range(len(self.random_word)):
             self.build_word.append('-')
@@ -58,7 +67,9 @@ Please try another.')
         return False
 
     def hang_man(self):
-
+        """
+        this function builds hangman based on error count
+        """
         if self.error_count == 1:
             self.hang[1] = self.hbody[self.error_count - 1]
         elif self.error_count >= 2 and self.error_count <= 6:
@@ -79,16 +90,27 @@ Please try another.')
                 self.error_count += 1
                 self.hang_man()
             if ''.join(self.build_word) == self.random_word:
+                self.winner = True
                 break
+
         self.print_board()
+
+        if self.winner:
+            print(f'YAY! You guessed the word: {self.random_word}! YOU WON!')
+        else:
+            print(f'GAME OVER :(. The word was: {self.random_word}.')
 
     def print_board(self):
         """
         this function prints the game board
         """
+
         lives = self.error_limit - self.error_count
+
         print(BANNER)
         print('\n'.join(self.hang))
         print(' '.join(self.build_word))
         print('\nLetters used: ' + ', '.join(self.used_letters) + "\n")
-        print(f"You have {lives} "+("lives" if lives > 1 else "life")+" left.")
+        if lives > 0 and not self.winner:
+            print(f"You have {lives} " +
+                  ("lives" if lives > 1 else "life") + " left.")
