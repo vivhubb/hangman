@@ -21,6 +21,7 @@ class HangmanGame:
         self.hang = hang
         self.hbody = hbody
         self.build_word = []
+        self.used_letters = []
 
         for _ in range(len(self.random_word)):
             self.build_word.append('-')
@@ -32,7 +33,13 @@ class HangmanGame:
         while True:
             guess = input('Guess a letter (A-Z): ')
             if guess in ascii_letters:
-                return guess.upper()
+                guess = guess.upper()
+                if guess in self.used_letters:
+                    print('This letter has already been used. \
+Please try another.')
+                else:
+                    self.used_letters.append(guess)
+                    return guess
             else:
                 print('Invalid input. Please try again.')
 
@@ -52,11 +59,15 @@ class HangmanGame:
         """
         this function runs the game
         """
-        self.print_board()
-        guess = self.get_user_input()
-        if not self.check_user_input(guess):
-            print('error + 1')
-            print('build the hangman')
+        while True:
+            self.print_board()
+            guess = self.get_user_input()
+            if not self.check_user_input(guess):
+                print('error + 1')
+                print('build the hangman')
+            if ''.join(self.build_word) == self.random_word:
+                self.print_board()
+                break
 
     def print_board(self):
         """
@@ -65,3 +76,4 @@ class HangmanGame:
         print(BANNER)
         print('\n'.join(self.hang))
         print(' '.join(self.build_word))
+        print('\nLetters used: ' + ', '.join(self.used_letters))
