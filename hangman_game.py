@@ -34,7 +34,7 @@ class HangmanGame:
         """
         while True:
             guess = input('Guess a letter (A-Z): ')
-            if guess in ascii_letters:
+            if guess in list(ascii_letters):
                 guess = guess.upper()
                 if guess in self.used_letters:
                     print('This letter has already been used. \
