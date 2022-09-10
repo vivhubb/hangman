@@ -1,5 +1,6 @@
 import random
 from words import words
+from hangman_game import HangmanGame
 
 BANNER = """
 .............................
@@ -27,5 +28,8 @@ def main():
     this is the main function of the program
     """
     random_word = get_random_word()
+    hangman_game = HangmanGame(random_word)
+    hangman_game.print_board()
+
 
 main()

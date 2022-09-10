@@ -1,3 +1,8 @@
+"""
+the program assumes that the words list contains at least
+1 word with lenght greater than or equal to 4 letters
+"""
+
 words = ["aback",
          "abaft",
          "abandoned",
