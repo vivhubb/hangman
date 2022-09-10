@@ -20,3 +20,12 @@ def get_random_word():
         word = random.choice(words)
         if len(word) >= 4:
             return word.upper()
+
+
+def main():
+    """
+    this is the main function of the program
+    """
+    random_word = get_random_word()
+
+main()
