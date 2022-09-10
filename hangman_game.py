@@ -57,6 +57,17 @@ Please try another.')
             return True
         return False
 
+    def hang_man(self):
+
+        if self.error_count == 1:
+            self.hang[1] = self.hbody[self.error_count - 1]
+        elif self.error_count >= 2 and self.error_count <= 6:
+            self.hang[2] = self.hbody[self.error_count - 1]
+        elif self.error_count == 7:
+            self.hang[3] = self.hbody[self.error_count - 1]
+        elif self.error_count > 7:
+            self.hang[4] = self.hbody[self.error_count - 1]
+
     def run_game(self):
         """
         this function runs the game
@@ -66,10 +77,10 @@ Please try another.')
             guess = self.get_user_input()
             if not self.check_user_input(guess):
                 self.error_count += 1
-                print('build the hangman')
+                self.hang_man()
             if ''.join(self.build_word) == self.random_word:
-                self.print_board()
                 break
+        self.print_board()
 
     def print_board(self):
         """
