@@ -29,7 +29,7 @@ def main():
     """
     random_word = get_random_word()
     hangman_game = HangmanGame(random_word)
-    hangman_game.print_board()
+    hangman_game.run_game()
 
 
 main()
