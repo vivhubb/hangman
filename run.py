@@ -3,6 +3,7 @@ from string import ascii_letters
 from words import words
 from hangman_game import HangmanGame
 from rules import greeting, rules
+from phrases import phrases
 
 BANNER = """
 .............................
@@ -23,6 +24,14 @@ def get_random_word():
         word = random.choice(words)
         if len(word) >= 4:
             return word.upper()
+
+
+def get_random_phrase():
+    """
+    this function selects a random phrase from phrases list
+    """
+    phrase = random.choice(phrases)
+    return phrase.upper()
 
 
 def get_option():
@@ -52,6 +61,19 @@ def check_option(option):
     return True
 
 
+def get_difficulty(name):
+    difficulty = 'X'
+
+    while check_option(difficulty) and difficulty.upper() not in ['E',
+                                                                  'H',
+                                                                  'EASY',
+                                                                  'HARD']:
+        difficulty = input(f'{name}, are you ready to play? Please select \
+difficulty EASY (E) or HARD (H): ')
+
+    return difficulty.upper()
+
+
 def main():
     """
     this is the main function of the program
@@ -61,26 +83,31 @@ def main():
     print(greeting)
     see_rules = input('Would you like to see the Game Rules and Instructions \
 before playing? (Y/N): ')
-    play = ''
 
-    if check_option(see_rules) and see_rules.upper() in ['N', 'NO']:
-        play = 'Y'
-
-    elif check_option(see_rules) and see_rules.upper() in ['Y', 'YES']:
+    if check_option(see_rules) and see_rules.upper() in ['Y', 'YES']:
         print(rules)
-        play = input(f'{name}, are you ready to play? (Y/N)')
 
-    if check_option(play) and play.upper() in ['Y', 'YES']:
-        while True:
-            random_word = get_random_word()
-            hangman_game = HangmanGame(random_word)
-            hangman_game.run_game()
+    difficulty = get_difficulty(name)
 
-            option = get_option()
-            if option in ['N', 'NO']:
-                break
-    else:
-        print('Quitting the game...')
+    # game loop
+    while True:
+        level = ''
+
+        if difficulty.upper() in ['E', 'EASY']:
+            random_choice = get_random_word()
+            level = 'E'
+        else:
+            random_choice = get_random_phrase()
+            level = 'H'
+
+        hangman_game = HangmanGame(random_choice, level)
+        hangman_game.run_game()
+
+        option = get_option()
+        if option in ['N', 'NO']:
+            break
+        else:
+            difficulty = get_difficulty(name)           
 
 
 main()

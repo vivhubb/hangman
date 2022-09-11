@@ -25,8 +25,9 @@ class HangmanGame:
         error_limit -> defines error limit
         error_count -> counts the mistakes made by user
         winner -> stores if there is a winner at the end of the game
+        level -> easy or hard game mode
     """
-    def __init__(self, random_word):
+    def __init__(self, random_word, level):
         self.random_word = random_word
         self.hang = hang
         self.hbody = hbody
@@ -35,9 +36,23 @@ class HangmanGame:
         self.error_limit = 11
         self.error_count = 0
         self.winner = False
+        self.level = level
 
-        for _ in range(len(self.random_word)):
-            self.build_word.append('-')
+        if level == 'E':
+            for _ in range(len(self.random_word)):
+                self.build_word.append('_')
+        else:
+            for x in self.random_word:
+                if x == '/':
+                    self.build_word.append('/')
+                elif x == '-':
+                    self.build_word.append('-')
+                elif x == "'":
+                    self.build_word.append("'")
+                elif x == ' ':
+                    self.build_word.append(' ')
+                else:
+                    self.build_word.append('_')
 
     def get_user_input(self):
         """
