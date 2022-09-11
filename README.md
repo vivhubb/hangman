@@ -1,31 +1,78 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **THE HANGMAN GAME**
+[THE HANGMAN GAME](https://dashboard.heroku.com/apps/hangman-gam3) is a Command Line Interface program built using Python.
 
-Welcome vivienne,
+![display game](/readme_images/display.png)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+---
+## TABLE OF CONTENTS
+---
 
-## Reminders
+<!-- TOC -->
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+- [**THE HANGMAN GAME**](#the-hangman-game)
+    - [TABLE OF CONTENTS](#table-of-contents)
+    - [USER EXPERIENCE](#user-experience)
+        - [FLOWCHART](#flowchart)
+    - [EXISTING FEATURES](#existing-features)
+    - [FUTURE IMPROVEMENT IDEAS](#future-improvement-ideas)
+    - [TECHNOLOGIES USED](#technologies-used)
+    - [TESTING](#testing)
+        - [CODE VALIDATION](#code-validation)
+    - [BUGS](#bugs)
+    - [DEPLOYMENT](#deployment)
+    - [CREDITS](#credits)
+    - [RECOGNITION](#recognition)
 
-## Creating the Heroku app
+<!-- /TOC -->
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+---
+## USER EXPERIENCE
+---
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### FLOWCHART
+---
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+![flowchart](/readme_images/flowchart.png)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+---
+## EXISTING FEATURES
+---
 
-Connect your GitHub repository and deploy as normal.
+---
+## FUTURE IMPROVEMENT IDEAS
+---
 
-## Constraints
+---
+## TECHNOLOGIES USED
+---
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+---
+## TESTING
+---
 
------
-Happy coding!
+### CODE VALIDATION
+---
+
+All python files pass validation through the [PEP8 online check](http://pep8online.com/) with no errors.
+
+![check words](/readme_images/check_words.png)
+![check phrases](/readme_images/check_phrases.png)
+![check rules](/readme_images/check_rules.png)
+![check stages](/readme_images/check_stages.png)
+![check run](/readme_images/check_run.png)
+![check game](/readme_images/check_game.png)
+
+---
+## BUGS
+---
+
+---
+## DEPLOYMENT
+---
+
+---
+## CREDITS
+---
+
+---
+## RECOGNITION

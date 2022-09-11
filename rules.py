@@ -1,3 +1,6 @@
+"""
+greeting and game rules for user
+"""
 GREETING = '\n You are about to play the HANGMAN game.'
 
 RULES = """
