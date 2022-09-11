@@ -2,7 +2,7 @@ import random
 from string import ascii_letters
 from words import words
 from hangman_game import HangmanGame
-from rules import greeting, rules
+from rules import GREETING, RULES
 from phrases import phrases
 
 BANNER = """
@@ -41,14 +41,14 @@ def get_option():
     """
     option = None
     while True:
-        option = input('\nWanna play again? Type Y/N: ')
+        option = input('\n Wanna play again? Type Y/N: ')
         if check_option(option):
             option = option.upper()
 
         if option in ['Y', 'N', 'YES', 'NO']:
             return option
         else:
-            print('\nInvalid answer. Wanna play again? Type Y/N: ')
+            print('\n Invalid answer. Wanna play again? Type Y/N: ')
 
 
 def check_option(option):
@@ -62,14 +62,21 @@ def check_option(option):
 
 
 def get_difficulty(name):
+    """
+    this function gets difficulty request from user
+    """
     difficulty = 'X'
 
     while check_option(difficulty) and difficulty.upper() not in ['E',
                                                                   'H',
+                                                                  'Q',
                                                                   'EASY',
-                                                                  'HARD']:
-        difficulty = input(f'{name}, are you ready to play? Please select \
-difficulty EASY (E) or HARD (H): ')
+                                                                  'HARD',
+                                                                  'QUIT']:
+        difficulty = input(f' {name}, are you ready? Please select \
+difficulty level to play.\n'
+                           f' Type "E" (easy), "H" (hard) or "Q" to QUIT \
+the game: ')
 
     return difficulty.upper()
 
@@ -78,14 +85,14 @@ def main():
     """
     this is the main function of the program
     """
-    name = input('Hello! Please type your name here: ')
-    print(f'\nWelcome {name}!')
-    print(greeting)
-    see_rules = input('Would you like to see the Game Rules and Instructions \
+    name = input(' Hello! Please type your name here: ')
+    print(f'\n Welcome, {name}!')
+    print(GREETING)
+    see_rules = input(' Would you like to read the GAME RULES \
 before playing? (Y/N): ')
 
     if check_option(see_rules) and see_rules.upper() in ['Y', 'YES']:
-        print(rules)
+        print(RULES)
 
     difficulty = get_difficulty(name)
 
@@ -93,6 +100,9 @@ before playing? (Y/N): ')
     while True:
         level = ''
 
+        if difficulty.upper() in ['Q', 'QUIT']:
+            print(' Quitting the game...')
+            break
         if difficulty.upper() in ['E', 'EASY']:
             random_choice = get_random_word()
             level = 'E'
@@ -105,9 +115,9 @@ before playing? (Y/N): ')
 
         option = get_option()
         if option in ['N', 'NO']:
+            print(' Quitting the game...')
             break
-        else:
-            difficulty = get_difficulty(name)           
+        difficulty = get_difficulty(name)
 
 
 main()

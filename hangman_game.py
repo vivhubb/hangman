@@ -59,17 +59,17 @@ class HangmanGame:
         this function returns a valid user input
         """
         while True:
-            guess = input('Guess a letter (A-Z): ')
+            guess = input(' Guess a letter (A-Z): ')
             if guess in list(ascii_letters):
                 guess = guess.upper()
                 if guess in self.used_letters:
-                    print('This letter has already been used. \
+                    print(' This letter has already been used. \
 Please try another.')
                 else:
                     self.used_letters.append(guess)
                     return guess
             else:
-                print('Invalid input. Please try again.')
+                print(' Invalid input. Please try again.')
 
     def check_user_input(self, guess):
         """
@@ -113,9 +113,10 @@ Please try another.')
         self.print_board()
 
         if self.winner:
-            print(f'YAY! You guessed the word: {self.random_word}! YOU WON!')
+            print(f' YAY! YOU WON! The correct answer was: {self.random_word}')
         else:
-            print(f'GAME OVER :(. The word was: {self.random_word}.')
+            print(f' SORRY, GAME OVER :(.\n'
+                  f' The correct answer was: {self.random_word}.')
 
     def print_board(self):
         """
@@ -126,10 +127,10 @@ Please try another.')
 
         print(BANNER)
         print('\n'.join(self.hang))
-        print(' '.join(self.build_word))
-        print('\nLetters used: ' + ', '.join(self.used_letters) + "\n")
+        print(' ' + ' '.join(self.build_word))
+        print('\n Used letters: ' + ', '.join(self.used_letters) + "\n")
         if lives > 0 and not self.winner:
-            print(f"You have {lives} " +
+            print(f" You have {lives} " +
                   ("lives" if lives > 1 else "life") + " left.")
 
     def clear_screen(self):
