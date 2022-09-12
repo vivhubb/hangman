@@ -21,6 +21,7 @@
     - [BUGS](#bugs)
     - [DEPLOYMENT](#deployment)
     - [CREDITS](#credits)
+        - [Content](#content)
     - [RECOGNITION](#recognition)
 
 <!-- /TOC -->
@@ -61,12 +62,12 @@
 
 All python files pass validation through the [PEP8 online check](http://pep8online.com/) with no errors.
 
-![check words](/readme_images/check_words.png)
-![check phrases](/readme_images/check_phrases.png)
-![check rules](/readme_images/check_rules.png)
-![check stages](/readme_images/check_stages.png)
-![check run](/readme_images/check_run.png)
-![check game](/readme_images/check_game.png)
+* [words.py](/readme_images/check_words.png)
+* [phrases.py](/readme_images/check_phrases.png)
+* [rules.py](/readme_images/check_rules.png)
+* [hangman_stages.py](/readme_images/check_stages.png)
+* [hangman_game.py](/readme_images/check_game.png)
+* [run.py](/readme_images/check_run.png)
 
 ---
 ## BUGS
@@ -103,9 +104,20 @@ while option in ['Y', 'YES']:
 ## DEPLOYMENT
 ---
 
+* Deployment
+
+* Cloning the repository
+
 ---
 ## CREDITS
 ---
+
+### Content
+
+* List of words was found via [stack overflow](https://www.randomlists.com/data/words.json).
+* List of phrases was built from [topcorrect](https://www.topcorrect.com/blog/50-popular-idioms-to-sound-like-a-native-speaker/) and [literary devices](https://literarydevices.net/huge-list-of-idiom-examples/).
+* The flowchart was built using [Lucidchart](https://www.lucidchart.com/pages/)
+
 
 ---
 ## RECOGNITION
