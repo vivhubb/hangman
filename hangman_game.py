@@ -29,8 +29,8 @@ class HangmanGame:
     """
     def __init__(self, random_word, level):
         self.random_word = random_word
-        self.hang = hang
-        self.hbody = hbody
+        self.hang = list(hang)
+        self.hbody = list(hbody)
         self.build_word = []
         self.used_letters = []
         self.error_limit = 11
@@ -87,6 +87,7 @@ Please try another.')
         """
         this function builds hangman based on error count
         """
+
         if self.error_count == 1:
             self.hang[1] = self.hbody[self.error_count - 1]
         elif self.error_count >= 2 and self.error_count <= 6:

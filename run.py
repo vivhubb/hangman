@@ -45,10 +45,9 @@ def get_option():
         if check_option(option):
             option = option.upper()
 
-        if option in ['Y', 'N', 'YES', 'NO']:
+        if option in ['Y', 'N']:
             return option
-        else:
-            print('\n Invalid answer. Wanna play again? Type Y/N: ')
+        print('\n Invalid answer. Wanna play again? Type Y/N: ')
 
 
 def check_option(option):
@@ -69,10 +68,7 @@ def get_difficulty(name):
 
     while check_option(difficulty) and difficulty.upper() not in ['E',
                                                                   'H',
-                                                                  'Q',
-                                                                  'EASY',
-                                                                  'HARD',
-                                                                  'QUIT']:
+                                                                  'Q']:
         difficulty = input(f' {name}, are you ready? Please select \
 difficulty level to play.\n'
                            f' Type "E" (easy), "H" (hard) or "Q" to QUIT \
@@ -91,7 +87,7 @@ def main():
     see_rules = input(' Would you like to read the GAME RULES \
 before playing? (Y/N): ')
 
-    if check_option(see_rules) and see_rules.upper() in ['Y', 'YES']:
+    if check_option(see_rules) and see_rules.upper() == 'Y':
         print(RULES)
 
     difficulty = get_difficulty(name)
@@ -100,24 +96,24 @@ before playing? (Y/N): ')
     while True:
         level = ''
 
-        if difficulty.upper() in ['Q', 'QUIT']:
-            print(' Quitting the game...')
-            break
-        if difficulty.upper() in ['E', 'EASY']:
+        if difficulty.upper() == 'E':
             random_choice = get_random_word()
             level = 'E'
         else:
             random_choice = get_random_phrase()
             level = 'H'
+        if difficulty.upper() == 'Q':
+            break
 
         hangman_game = HangmanGame(random_choice, level)
         hangman_game.run_game()
 
         option = get_option()
-        if option in ['N', 'NO']:
-            print(' Quitting the game...')
+        if option == 'N':
             break
         difficulty = get_difficulty(name)
+
+    print(' Quitting the game...')
 
 
 main()
