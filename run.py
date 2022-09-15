@@ -85,7 +85,7 @@ before playing? (Y/N): ')
         elif check_option(see_rules) and see_rules.upper() == 'N':
             break
         else:
-            print('Invalid input. Please try again.')
+            print(' Invalid input. Please try again.')
 
 
 def get_difficulty(name):
@@ -94,12 +94,11 @@ def get_difficulty(name):
     """
     difficulty = 'X'
 
-    while check_option(difficulty) and difficulty.upper() not in ['E',
-                                                                  'H',
-                                                                  'Q']:
+    while not check_option(difficulty) or difficulty.upper() not in ['E',
+                                                                     'H',
+                                                                     'Q']:
         difficulty = input(f' {name}, are you ready? Please select \
-difficulty level to play.\n'
-                           f' Type "E" (easy), "H" (hard) or "Q" to QUIT \
+difficulty level to play.\n Type "E" (easy), "H" (hard) or "Q" to QUIT \
 the game: ')
 
     return difficulty.upper()
@@ -120,14 +119,14 @@ def main():
     while True:
         level = ''
 
-        if difficulty.upper() == 'E':
+        if difficulty == 'Q':
+            break
+        if difficulty == 'E':
             random_choice = get_random_word()
             level = 'E'
         else:
             random_choice = get_random_phrase()
             level = 'H'
-        if difficulty.upper() == 'Q':
-            break
 
         hangman_game = HangmanGame(random_choice, level)
         hangman_game.run_game()
