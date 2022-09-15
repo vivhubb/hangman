@@ -71,6 +71,23 @@ def get_name():
         print('Invalid input. Please try again.')
 
 
+def print_rules():
+    """
+    this function validates the see_rules input
+    """
+    while True:
+        see_rules = input(' Would you like to read the GAME RULES \
+before playing? (Y/N): ')
+
+        if check_option(see_rules) and see_rules.upper() == 'Y':
+            print(RULES)
+            break
+        elif check_option(see_rules) and see_rules.upper() == 'N':
+            break
+        else:
+            print('Invalid input. Please try again.')
+
+
 def get_difficulty(name):
     """
     this function gets difficulty request from user
@@ -95,11 +112,7 @@ def main():
     name = get_name()
     print(f'\n Welcome, {name}!')
     print(GREETING)
-    see_rules = input(' Would you like to read the GAME RULES \
-before playing? (Y/N): ')
-
-    if check_option(see_rules) and see_rules.upper() == 'Y':
-        print(RULES)
+    print_rules()
 
     difficulty = get_difficulty(name)
 
