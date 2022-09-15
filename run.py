@@ -60,6 +60,17 @@ def check_option(option):
     return True
 
 
+def get_name():
+    """
+    this function validates the name input
+    """
+    while True:
+        name = input(' Please type your name here: ')
+        if check_option(name) and name.strip() != '':
+            return name
+        print('Invalid input. Please try again.')
+
+
 def get_difficulty(name):
     """
     this function gets difficulty request from user
@@ -81,7 +92,7 @@ def main():
     """
     this is the main function of the program
     """
-    name = input(' Hello! Please type your name here: ')
+    name = get_name()
     print(f'\n Welcome, {name}!')
     print(GREETING)
     see_rules = input(' Would you like to read the GAME RULES \
