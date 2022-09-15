@@ -1,5 +1,5 @@
 # **THE HANGMAN GAME**
-[THE HANGMAN GAME](https://dashboard.heroku.com/apps/hangman-gam3) is a Command Line Interface program built using Python.
+[THE HANGMAN GAME](https://dashboard.heroku.com/apps/hangman-gam3) is a Command Line Interface program built as the third Milestone Project using Python.
 
 ![display game](/readme_images/display.png)
 
@@ -30,8 +30,20 @@
 ## USER EXPERIENCE
 ---
 
+Users are able to play a game where they can try to guess the hidden word or phrase (depending on the difficulty level selected), one letter at a time. The game ends either when the user runs out of lives or when the correct answer was guessed.
+
 ### FLOWCHART
 ---
+
+The flowchart for [THE HANGMAN GAME](https://dashboard.heroku.com/apps/hangman-gam3) was built using [Lucidchart](https://www.lucidchart.com/pages/).
+
+The flowchart visualizes the separate steps of the game in sequential order. 
+
+Once the program starts running the user is asked for a name input which is then followed by another input where the user has the option of reading the game rules and instructions before playing. The third input will require the user to select a difficulty level which will then start the main game loop with either a word or a phrase to be guessed.
+
+The hidden word or phrase will then be visualized with a series of underline and any special characters will be given. Every guess is stored and displayed for the user and the correct guesses will uncover the hidden letters in their correct place(s). Every wrong answer will take away a life and draw a part of the hangman.
+
+The game is over either when the correct answer was guessed or if the user runs out of lives and the hangman is complete. Once the game is over the user will be presented with an option to play again and if they do, this will take them back to difficulty level selection phase.
 
 ![flowchart](/readme_images/flowchart.png)
 
