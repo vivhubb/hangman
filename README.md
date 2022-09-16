@@ -57,8 +57,6 @@ The game is over either when the correct answer was guessed or if the user runs 
 ## EXISTING FEATURES
 ---
 
-![features](/readme_images/features.png)
-
 ### Name input & Greeting
 ---
 
@@ -74,6 +72,8 @@ The user is prompted to make a choice if they want to see the game rules and ins
 
 At this stage the user is asked to select difficulty level for the game. They will have 2 options to choose from : easy and hard. Depending on their choice the game will build up for guessing either a random word from a list of approximately 2500 words or a random phrase from a list of approximately 200 idioms.
 
+![features](/readme_images/features.png)
+
 ### Game board
 ---
 
@@ -86,6 +86,11 @@ Once the difficulty level is selected the game board is printed. We first see a 
 ---
 ## FUTURE IMPROVEMENT IDEAS
 ---
+
+* create a more complex design for the game board and banner
+* expand the list of phrases for the game so it doesn't become repetitive
+* expand the one at a time letter guess to word guesses as well
+* create different options for difficulty level choice (like adding medium level or categories)
 
 [JUMP to TOP](#table-of-contents)
 
