@@ -27,7 +27,7 @@
     - [BUGS](#bugs)
     - [DEPLOYMENT](#deployment)
     - [CREDITS](#credits)
-        - [Content](#content)
+        - [CONTENT](#content)
     - [RECOGNITION](#recognition)
 
 <!-- /TOC -->
@@ -284,15 +284,18 @@ Cloning repository creates a local copy on the computer for the remote GitHub re
 ## CREDITS
 ---
 
-### Content
+### CONTENT
 
 * List of words was found via [Stack Overflow](https://www.randomlists.com/data/words.json).
 * List of phrases was built from [Topcorrect](https://www.topcorrect.com/blog/50-popular-idioms-to-sound-like-a-native-speaker/) and [Literary Devices](https://literarydevices.net/huge-list-of-idiom-examples/).
 * The flowchart was built using [Lucidchart](https://www.lucidchart.com/pages/)
 
-
 ---
 ## RECOGNITION
 ---
+
+The website was created for Code Institute's Full Stack Software Development Diploma Course as the third Milestone Project.
+
+Therefore, I would like to take this opportunity to show my appreciation and thanks to my mentor **Precious Ijege** and the whole of **Code Institute** for all the help and support received throughout the creation of this project.
 
 [JUMP to TOP](#table-of-contents)
