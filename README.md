@@ -266,6 +266,18 @@ The project was deployed to [Heroku](https://dashboard.heroku.com/apps). Deploym
 
 * **Cloning the repository**
 
+Cloning repository creates a local copy on the computer for the remote GitHub repository.
+
+1. On GitHub navigate to the main page of the repository
+2. Find and click code in the top right corner
+3. Copy the URL for the repository
+4. Open Git Bash
+5. Change the current working directory to the location of your choice
+6. Type git clone, and then paste copied URL
+7. Press ENTER to create local clone
+
+![clone](/readme_images/clone.png)
+
 [JUMP to TOP](#table-of-contents)
 
 ---
