@@ -102,7 +102,7 @@ Once the difficulty level is selected the game board is printed. We first see a 
 ---
 
 * [Python](https://www.python.org/) - programming language used to build the game
-* [Heroku](https://dashboard.heroku.com/apps) - platform used to host and deploy the game
+* [Heroku](https://dashboard.heroku.com/apps) - platform used to deploy the game
 * [Lucidchart](https://www.lucidchart.com/pages) - used for creating the flowchart of the programme
 * [Github](https://github.com/) - used for creating and storing the repository of the project
 * [Gitpod](https://gitpod.io/) - used for creating and trialing the code
@@ -126,7 +126,7 @@ Once the difficulty level is selected the game board is printed. We first see a 
 ### MANUAL TESTING
 ---
 
-[THE HANGMAN GAME's](https://dashboard.heroku.com/apps/hangman-gam3) was tested throughout development in VS Code, PowerShell, Gitpod and Heroku. Manual testing verified and confirmed the functionality of the steps listed below:
+[THE HANGMAN GAME](https://dashboard.heroku.com/apps/hangman-gam3) was tested throughout development in VS Code, PowerShell, Gitpod and Heroku. Manual testing verified and confirmed the functionality of the steps listed below:
 
 * **Program Start**
     - program starts without any detected issues
@@ -191,6 +191,10 @@ All python files pass validation through the [PEP8 online check](http://pep8onli
 ## BUGS
 ---
 
+While creating the game i have identified and corrected the below bugs:
+
+* Even though every letter was guessed correctly the word builder would not be equal to the randomly choosen word/phrase as it was a list of strings. The bug solution was tested and proved using PowerShell.
+
 ```
 while option in ['Y', 'YES']:
         while error_count != error_limit:
@@ -213,6 +217,8 @@ while option in ['Y', 'YES']:
 
 ```
 ![correction trial](/readme_images/fix_01.png)
+
+* Letter guess input would accept consecutive letters from abc as ascii_letters is a long string with letters (a-Z). The bug solution was tested and proved using PowerShell.
 
 ![bug 2](/readme_images/bug_02.png)
 
