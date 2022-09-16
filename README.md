@@ -230,9 +230,41 @@ while option in ['Y', 'YES']:
 ## DEPLOYMENT
 ---
 
-* Deployment
+* **Deployment**
 
-* Cloning the repository
+The project was deployed to [Heroku](https://dashboard.heroku.com/apps). Deployment steps are:
+
+1. Log in to Heroku or Set up an account
+
+![log in](/readme_images/heroku_01.png)
+
+2. Create a new app from the dashboard
+
+![new app](/readme_images/heroku_02.png)
+
+3. Enter a unique name and select region
+4. Click the 'Create app' button
+
+![create app](/readme_images/heroku_03.png)
+
+5. Select the settings tab from navigation panel
+6. Click 'Reveal config vars' button
+7. In the 'Key' field input 'PORT'; in the 'Value' field input '8000'
+8. Press 'Add' button
+9. Scroll down and click 'Add buildpack'
+10. First add 'Python'
+11. Then add 'node.js'
+
+
+![settings](/readme_images/heroku_04.png)
+
+12. Scroll up and select the 'Deploy' tab from navigation menu
+13. In the 'Deployment method' section select GitHub and connect your repository
+14. Scroll down and select your preferred deployment type then click 'Deploy branch' 
+
+![deploy](/readme_images/heroku_05.png)
+
+* **Cloning the repository**
 
 [JUMP to TOP](#table-of-contents)
 
