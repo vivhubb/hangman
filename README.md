@@ -20,7 +20,9 @@
         - [Game board](#game-board)
     - [FUTURE IMPROVEMENT IDEAS](#future-improvement-ideas)
     - [TECHNOLOGIES USED](#technologies-used)
+    - [PYTHON MODULES](#python-modules)
     - [TESTING](#testing)
+        - [TESTING AND QUALITY CONTROL](#testing-and-quality-control)
         - [CODE VALIDATION](#code-validation)
     - [BUGS](#bugs)
     - [DEPLOYMENT](#deployment)
@@ -109,8 +111,21 @@ Once the difficulty level is selected the game board is printed. We first see a 
 [JUMP to TOP](#table-of-contents)
 
 ---
+## PYTHON MODULES
+---
+
+* [random](https://docs.python.org/3/library/random.html) - module used to generate random actions
+* [platform](https://docs.python.org/3/library/platform.html) - module used to access underlying platform's data
+* [os](https://docs.python.org/3/library/os.html) - module used to interact with the underlying operating system
+
+---
 ## TESTING
 ---
+
+### TESTING AND QUALITY CONTROL
+---
+
+
 
 ### CODE VALIDATION
 ---
