@@ -22,7 +22,7 @@
     - [TECHNOLOGIES USED](#technologies-used)
     - [PYTHON MODULES](#python-modules)
     - [TESTING](#testing)
-        - [TESTING AND QUALITY CONTROL](#testing-and-quality-control)
+        - [MANUAL TESTING](#manual-testing)
         - [CODE VALIDATION](#code-validation)
     - [BUGS](#bugs)
     - [DEPLOYMENT](#deployment)
@@ -93,6 +93,7 @@ Once the difficulty level is selected the game board is printed. We first see a 
 * expand the list of phrases for the game so it doesn't become repetitive
 * expand the one at a time letter guess to word guesses as well
 * create different options for difficulty level choice (like adding medium level or categories)
+* create tracker to count wins and losses for user
 
 [JUMP to TOP](#table-of-contents)
 
@@ -122,10 +123,55 @@ Once the difficulty level is selected the game board is printed. We first see a 
 ## TESTING
 ---
 
-### TESTING AND QUALITY CONTROL
+### MANUAL TESTING
 ---
 
+[THE HANGMAN GAME's](https://dashboard.heroku.com/apps/hangman-gam3) was tested throughout development in VS Code, PowerShell, Gitpod and Heroku. Manual testing verified and confirmed the functionality of the steps listed below:
 
+* **Program Start**
+    - program starts without any detected issues
+    - name input request runs on start-up
+    - invalid input calls error feedback for user
+
+* **Name input**
+    - input is validated against special characters, numbers and empty spaces
+    - invalid input calls error feedback for user
+
+* **Game Rules**
+    - option to see the game rules runs after name input
+    - input is validated to only accept given options
+    - invalid input calls error feedback for user
+
+* **Difficulty level selection**
+    - difficulty selection runs after game rules option
+    - input is validated to only accept given options
+    - valid input pulls random item from the correct list based on difficulty selection
+    - invalid input calls error feedback for user
+
+* **Game board**
+    - initial empty game board is printed after difficulty selection
+
+* **Letter guess**
+    - input is validated to only accept letters (A-Z)
+    - correct guesses uncover the letters in their respective place(s)
+    - invalid input calls error feedback for user
+
+* **Remaining attempts**
+    - remaining attempts are displayed as lives and they refresh after each guess
+    - wrong guess will decrease the number of lives and draw the respective part of the stick man
+
+* **Used letters tracker**
+    - user guesses are stored and displayed for user
+    - guess duplicate calls error feedback for user
+
+* **End game**
+    - the game ends once word is guessed or the man is hung
+    - provides winner or looser message feedback for user
+
+* **Play again**
+    - play again option runs correctly when game is over
+    - game returns to difficulty selection and restarts correctly on affirmative
+    - otherwise the program stops running while providing a feedback message for user
 
 ### CODE VALIDATION
 ---
