@@ -82,10 +82,9 @@ before playing? (Y/N): ')
         if check_option(see_rules) and see_rules.upper() == 'Y':
             print(RULES)
             break
-        elif check_option(see_rules) and see_rules.upper() == 'N':
+        if check_option(see_rules) and see_rules.upper() == 'N':
             break
-        else:
-            print(' Invalid input. Please try again.')
+        print(' Invalid input. Please try again.')
 
 
 def get_difficulty(name):

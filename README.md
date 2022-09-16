@@ -107,7 +107,7 @@ Once the difficulty level is selected the game board is printed. We first see a 
 * [Github](https://github.com/) - used for creating and storing the repository of the project
 * [Gitpod](https://gitpod.io/) - used for creating and trialing the code
 * [Visual Studio Code](https://code.visualstudio.com/) - code editor used to create initial version of the project
-* [PowerShell](https://www.powershellgallery.com/) - task automation and configuration management program used to build and test solutions
+* [PowerShell](https://www.powershellgallery.com/) - command line program used to test partial code correctness and bug solutions
 
 [JUMP to TOP](#table-of-contents)
 
@@ -224,6 +224,23 @@ while option in ['Y', 'YES']:
 
 ![fix 2](/readme_images/fix_02.png)
 
+* On new game the board would not reset the gibbot to it's initial empty stage. Converting the two relevant class attributes to lists solved the issue.
+
+![bug 3](/readme_images/bug_03.png)
+
+```
+def __init__(self, random_word, level):
+        self.random_word = random_word
+        self.hang = list(hang)      # convert to list
+        self.hbody = list(hbody)        # convert to list
+        self.build_word = []
+        self.used_letters = []
+        self.error_limit = 11
+        self.error_count = 0
+        self.winner = False
+        self.level = level
+```
+
 [JUMP to TOP](#table-of-contents)
 
 ---
@@ -271,7 +288,7 @@ Cloning repository creates a local copy on the computer for the remote GitHub re
 1. On GitHub navigate to the main page of the repository
 2. Find and click code in the top right corner
 3. Copy the URL for the repository
-4. Open Git Bash
+4. Open any command line where git is installed
 5. Change the current working directory to the location of your choice
 6. Type git clone, and then paste copied URL
 7. Press ENTER to create local clone

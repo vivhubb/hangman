@@ -139,9 +139,9 @@ Please try another.')
         this function clears the screen
         """
         if is_windows():
-            os.system('cls')    # system call, clears screen
+            os.system('cls')        # system call, clears screen
         else:
-            os.system('clear')  # system call, clears screen
+            os.system('clear')
 
 
 def is_windows():
