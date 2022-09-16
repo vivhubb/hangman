@@ -14,6 +14,10 @@
     - [USER EXPERIENCE](#user-experience)
         - [FLOWCHART](#flowchart)
     - [EXISTING FEATURES](#existing-features)
+        - [Name input & Greeting](#name-input--greeting)
+        - [Game rules](#game-rules)
+        - [Difficulty level selection](#difficulty-level-selection)
+        - [Game board](#game-board)
     - [FUTURE IMPROVEMENT IDEAS](#future-improvement-ideas)
     - [TECHNOLOGIES USED](#technologies-used)
     - [TESTING](#testing)
@@ -47,13 +51,43 @@ The game is over either when the correct answer was guessed or if the user runs 
 
 ![flowchart](/readme_images/flowchart.png)
 
+[JUMP to TOP](#table-of-contents)
+
 ---
 ## EXISTING FEATURES
 ---
 
+![features](/readme_images/features.png)
+
+### Name input & Greeting
+---
+
+The user is asked to input a name for the game which is the used to personalize experience with a greeting. The input is checked so that it does not contain any numbers or special characters. An empty string will also throw an 'Invalid input' feedback and the user will be asked to try again.
+
+### Game rules
+---
+
+The user is prompted to make a choice if they want to see the game rules and instructions before playing. The input is checked so that only the given options are accepted and everything else throws a 'Invalid input' error and the user will be asked to try again.
+
+### Difficulty level selection
+---
+
+At this stage the user is asked to select difficulty level for the game. They will have 2 options to choose from : easy and hard. Depending on their choice the game will build up for guessing either a random word from a list of approximately 2500 words or a random phrase from a list of approximately 200 idioms.
+
+### Game board
+---
+
+Once the difficulty level is selected the game board is printed. We first see a banner for the game which helps to set the mood. This is followed by an empty gibbot where the hangman will be drawn and the place of the word or phrase to be guessed. For every letter in the word or phrase an underline will be displayed to represent the number of characters the correct answer has. All guesses made by the user (right or wrong) will be stored snd displayed to help keep track. Below, the user will have a life count which will show how many attempts are left until the game is over.
+
+![easy game](/readme_images/easy.png)  ![hard game](/readme_images/hard.png)
+
+[JUMP to TOP](#table-of-contents)
+
 ---
 ## FUTURE IMPROVEMENT IDEAS
 ---
+
+[JUMP to TOP](#table-of-contents)
 
 ---
 ## TECHNOLOGIES USED
@@ -64,6 +98,8 @@ The game is over either when the correct answer was guessed or if the user runs 
 * [Lucidchart](https://www.lucidchart.com/pages)
 * [Github](https://github.com/)
 * [Gitpod](https://gitpod.io/)
+
+[JUMP to TOP](#table-of-contents)
 
 ---
 ## TESTING
@@ -80,6 +116,8 @@ All python files pass validation through the [PEP8 online check](http://pep8onli
 * [hangman_stages.py](/readme_images/check_stages.png)
 * [hangman_game.py](/readme_images/check_game.png)
 * [run.py](/readme_images/check_run.png)
+
+[JUMP to TOP](#table-of-contents)
 
 ---
 ## BUGS
@@ -112,6 +150,8 @@ while option in ['Y', 'YES']:
 
 ![fix 2](/readme_images/fix_02.png)
 
+[JUMP to TOP](#table-of-contents)
+
 ---
 ## DEPLOYMENT
 ---
@@ -120,16 +160,21 @@ while option in ['Y', 'YES']:
 
 * Cloning the repository
 
+[JUMP to TOP](#table-of-contents)
+
 ---
 ## CREDITS
 ---
 
 ### Content
 
-* List of words was found via [stack overflow](https://www.randomlists.com/data/words.json).
-* List of phrases was built from [topcorrect](https://www.topcorrect.com/blog/50-popular-idioms-to-sound-like-a-native-speaker/) and [literary devices](https://literarydevices.net/huge-list-of-idiom-examples/).
+* List of words was found via [Stack Overflow](https://www.randomlists.com/data/words.json).
+* List of phrases was built from [Topcorrect](https://www.topcorrect.com/blog/50-popular-idioms-to-sound-like-a-native-speaker/) and [Literary Devices](https://literarydevices.net/huge-list-of-idiom-examples/).
 * The flowchart was built using [Lucidchart](https://www.lucidchart.com/pages/)
 
 
 ---
 ## RECOGNITION
+---
+
+[JUMP to TOP](#table-of-contents)
