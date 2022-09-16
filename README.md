@@ -98,11 +98,13 @@ Once the difficulty level is selected the game board is printed. We first see a 
 ## TECHNOLOGIES USED
 ---
 
-* [Python](https://www.python.org/)
-* [Heroku](https://dashboard.heroku.com/apps)
-* [Lucidchart](https://www.lucidchart.com/pages)
-* [Github](https://github.com/)
-* [Gitpod](https://gitpod.io/)
+* [Python](https://www.python.org/) - programming language used to build the game
+* [Heroku](https://dashboard.heroku.com/apps) - platform used to host and deploy the game
+* [Lucidchart](https://www.lucidchart.com/pages) - used for creating the flowchart of the programme
+* [Github](https://github.com/) - used for creating and storing the repository of the project
+* [Gitpod](https://gitpod.io/) - used for creating and trialing the code
+* [Visual Studio Code](https://code.visualstudio.com/) - code editor used to create initial version of the project
+* [PowerShell](https://www.powershellgallery.com/) - task automation and configuration management program used to build and test solutions
 
 [JUMP to TOP](#table-of-contents)
 
