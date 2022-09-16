@@ -14,10 +14,10 @@
     - [USER EXPERIENCE](#user-experience)
         - [FLOWCHART](#flowchart)
     - [EXISTING FEATURES](#existing-features)
-        - [Name input & Greeting](#name-input--greeting)
-        - [Game rules](#game-rules)
-        - [Difficulty level selection](#difficulty-level-selection)
-        - [Game board](#game-board)
+        - [NAME INPUT & GREETING](#name-input--greeting)
+        - [GAME RULES](#game-rules)
+        - [DIFFICULTY LEVEL SELECTION](#difficulty-level-selection)
+        - [GAME BOARD](#game-board)
     - [FUTURE IMPROVEMENT IDEAS](#future-improvement-ideas)
     - [TECHNOLOGIES USED](#technologies-used)
     - [PYTHON MODULES](#python-modules)
@@ -47,9 +47,9 @@ The flowchart visualizes the separate steps of the game in sequential order.
 
 Once the program starts running the user is asked for a name input which is then followed by another input where the user has the option of reading the game rules and instructions before playing. The third input will require the user to select a difficulty level which will then start the main game loop with either a word or a phrase to be guessed.
 
-The hidden word or phrase will then be visualized with a series of underline and any special characters will be given. Every guess is stored and displayed for the user and the correct guesses will uncover the hidden letters in their correct place(s). Every wrong answer will take away a life and draw a part of the hangman.
+The hidden word or phrase will then be visualized with a series of underlineS '_' and any special characters will be given. Every guess is stored and displayed for the user and the correct guesses will uncover the hidden letters in their correct place(s). Every wrong answer will take away a life and draw a part of the stick man.
 
-The game is over either when the correct answer was guessed or if the user runs out of lives and the hangman is complete. Once the game is over the user will be presented with an option to play again and if they do, this will take them back to difficulty level selection phase.
+The game is over either when the correct answer was guessed or if the user runs out of lives and the hangman is complete. Once the game is over the user will be presented with an option to play again and if they do, this will take them back to the difficulty level selection phase.
 
 ![flowchart](/readme_images/flowchart.png)
 
@@ -59,27 +59,27 @@ The game is over either when the correct answer was guessed or if the user runs 
 ## EXISTING FEATURES
 ---
 
-### Name input & Greeting
+### NAME INPUT & GREETING
 ---
 
-The user is asked to input a name for the game which is the used to personalize experience with a greeting. The input is checked so that it does not contain any numbers or special characters. An empty string will also throw an 'Invalid input' feedback and the user will be asked to try again.
+The user is asked to input a name for the game which is then used to personalize experience with a greeting. The input is checked so that it does not contain any numbers or special characters. An empty string will also throw an 'Invalid input' feedback and the user will be asked to try again.
 
-### Game rules
+### GAME RULES
 ---
 
 The user is prompted to make a choice if they want to see the game rules and instructions before playing. The input is checked so that only the given options are accepted and everything else throws a 'Invalid input' error and the user will be asked to try again.
 
-### Difficulty level selection
+### DIFFICULTY LEVEL SELECTION
 ---
 
 At this stage the user is asked to select difficulty level for the game. They will have 2 options to choose from : easy and hard. Depending on their choice the game will build up for guessing either a random word from a list of approximately 2500 words or a random phrase from a list of approximately 200 idioms.
 
 ![features](/readme_images/features.png)
 
-### Game board
+### GAME BOARD
 ---
 
-Once the difficulty level is selected the game board is printed. We first see a banner for the game which helps to set the mood. This is followed by an empty gibbot where the hangman will be drawn and the place of the word or phrase to be guessed. For every letter in the word or phrase an underline will be displayed to represent the number of characters the correct answer has. All guesses made by the user (right or wrong) will be stored snd displayed to help keep track. Below, the user will have a life count which will show how many attempts are left until the game is over.
+Once the difficulty level is selected the game board is printed. We first see a banner for the game which helps to set the mood. This is followed by an empty gibbot where the hangman will be drawn and below is the placeholder of the word or phrase to be guessed. For every letter in the word or phrase an underline will be displayed to represent the number of characters the correct answer has. All guesses made by the user (right or wrong) will be stored and displayed to help keep track. Below, the user will have a life count which will show how many attempts are left until the game is over.
 
 ![easy game](/readme_images/easy.png)  ![hard game](/readme_images/hard.png)
 
@@ -91,9 +91,9 @@ Once the difficulty level is selected the game board is printed. We first see a 
 
 * create a more complex design for the game board and banner
 * expand the list of phrases for the game so it doesn't become repetitive
-* expand the one at a time letter guess to word guesses as well
-* create different options for difficulty level choice (like adding medium level or categories)
-* create tracker to count wins and losses for user
+* improve the one at a time letter guess to word guesses as well
+* add different options for difficulty level choice (like adding medium level or categories)
+* add function to count wins and losses for user
 
 [JUMP to TOP](#table-of-contents)
 
@@ -115,9 +115,9 @@ Once the difficulty level is selected the game board is printed. We first see a 
 ## PYTHON MODULES
 ---
 
-* [random](https://docs.python.org/3/library/random.html) - module used to generate random actions
-* [platform](https://docs.python.org/3/library/platform.html) - module used to access underlying platform's data
-* [os](https://docs.python.org/3/library/os.html) - module used to interact with the underlying operating system
+* [random](https://docs.python.org/3/library/random.html) - module generates random actions
+* [platform](https://docs.python.org/3/library/platform.html) - module accesses underlying platform's data
+* [os](https://docs.python.org/3/library/os.html) - module interacts with the underlying operating system
 
 ---
 ## TESTING
@@ -157,15 +157,15 @@ Once the difficulty level is selected the game board is printed. We first see a 
     - invalid input calls error feedback for user
 
 * **Remaining attempts**
-    - remaining attempts are displayed as lives and they refresh after each guess
+    - remaining attempts are displayed as lives
     - wrong guess will decrease the number of lives and draw the respective part of the stick man
 
 * **Used letters tracker**
     - user guesses are stored and displayed for user
-    - guess duplicate calls error feedback for user
+    - guess repetition calls error feedback for user
 
 * **End game**
-    - the game ends once word is guessed or the man is hung
+    - the game ends once correct answer is guessed or the man is hung
     - provides winner or looser message feedback for user
 
 * **Play again**
